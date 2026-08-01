@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Happy Birthday Saloni 🌻</title>
+<title>Happiest Birthday Saloni 🌻</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,serif;background:linear-gradient(135deg,#fff3e0,#f7d9b5);color:#5b4030;overflow-x:hidden;height:100vh;display:flex;align-items:center;justify-content:center}
@@ -50,14 +50,16 @@ button:hover{transform:scale(1.05)}
 </div>
 
 <div class="stage">
+    <!-- TIMER / LOCK SCREEN -->
     <div class="card active" id="timer-screen">
-        <h1>⏳ Special Surprise ⏳</h1>
-        <p>Aapke liye ek pyaara sa surprise taiyar hai...</p>
+        <h1>come back 30 seconds before clock hits 12.00 </h1>
+        <p>lets wait...</p>
         <div class="countdown-timer" id="timerDisplay">00h : 00m : 00s</div>
         <button id="openBtn" onclick="unlockWebsite()" style="display:none;background:#ff4d6d;font-weight:bold;">🎉 Tap to Open Surprise ✨</button>
         <p style="font-size:13px;color:#888;margin-top:10px;" id="timerSubText">Raat ke 12 baje tak ka intezaar ✨</p>
     </div>
 
+    <!-- PAGE 1: Envelope & Letter Popup -->
     <div class="card" id="p1">
         <h1>Saloni 🌻</h1>
         <p>mazak mat bnana 🤧...</p>
@@ -71,18 +73,21 @@ button:hover{transform:scale(1.05)}
         </div>
     </div>
 
+    <!-- PAGE 2: Apology & Typewriter -->
     <div class="card" id="p2">
         <h2>💌 Happiest Birthday, Sallo</h2>
         <div id="text"></div>
         <button onclick="goToPage(3)" id="nextBtn" style="display:none;">Continue 🌻</button>
     </div>
 
+    <!-- PAGE 3: Final Wish -->
     <div class="card" id="p3">
         <h1>🎉 Happy Birthday, Saloni</h1>
-        <p style="font-size:16px;line-height:1.6;margin-top:15px;">May your life always be filled with happiness, peace, and beautiful memories. Stay blessed and keep smiling always! ✨</p>
+        <p style="font-size:16px;line-height:1.6;margin-top:15px;">May your life always be filled with happiness, peace, and beautiful memories.! ✨</p>
         <button onclick="goToPage(4)">One Last Thing ✨</button>
     </div>
 
+    <!-- PAGE 4: Extra Final Cute Note -->
     <div class="card" id="p4">
         <h1>🌻 Always Keep Smiling</h1>
         <p style="font-size:15px;line-height:1.7;margin-top:15px;">Chahe kuch bhi ho jaye, bas apna dhyan rakhna aur woh pyaari si smile hamesha apne chehre par rakhna. Have a wonderful day ahead! 💛</p>
@@ -152,7 +157,19 @@ function openEnvelope(){
     document.getElementById('envLetter').classList.add('show');
 }
 
-const apologyText = "I hope you have a beautiful birthday and that this day brings you happiness, peace, and countless beautiful moments.\n\nI'm sorry because I wasn't able to wish you last year.\n\nI know you probably hate me now, and maybe you've even cursed or abused me at times. Honestly, I don't blame you. Looking back at our old chats, I realized that I wasn't treating you the way you truly deserved to be treated. If I made you feel hurt or unappreciated, I'm genuinely sorry.\n\nYou made the right decision for yourself, and I'm proud of you for choosing what was best for you.\n\nI pray that you, your mumma, papa, and your sister are always healthy, happy, and blessed. May this birthday bring you peace, happiness, success, and countless beautiful moments.\n\nTake care of yourself... aur hamesha smile karti rehna.\n\nI miss you.";
+const apologyText = `I hope you have a beautiful birthday and that this day brings you happiness, peace, and countless beautiful moments.
+
+I'm sorry because I wasn't able to wish you last year.
+
+I know you probably hate me now, and maybe you've even cursed or abused me at times. Honestly, I don't blame you. Looking back at our old chats, I realized that I wasn't treating you the way you truly deserved to be treated. If I made you feel hurt or unappreciated, I'm genuinely sorry.
+
+You made the right decision for yourself, and I'm proud of you for choosing what was best for you.
+
+I pray that you, your mumma, papa, and your sister are always healthy, happy, and blessed. May this birthday bring you peace, happiness, success, and countless beautiful moments.
+
+Take care of yourself... aur hamesha smile karti rehna.
+
+I miss you.`;
 
 let typingStarted = false;
 
