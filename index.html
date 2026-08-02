@@ -14,9 +14,6 @@ body{margin:0;font-family:Georgia,serif;background:linear-gradient(135deg,#fff3e
 
 .card.active{opacity:1;pointer-events:auto;transform:scale(1) translateY(0)}
 
-#timer-screen{display:flex;flex-direction:column;align-items:center;justify-content:center}
-.countdown-timer{font-size:32px;font-weight:bold;color:#c99545;margin:15px 0;background:#fff;padding:15px 25px;border-radius:20px;box-shadow:0 5px 15px #0001;letter-spacing:2px}
-
 .envelope-box{cursor:pointer;display:inline-block;transition:transform 0.3s}
 .envelope-box:hover{transform:scale(1.05)}
 .env-icon{font-size:80px;margin-bottom:10px}
@@ -50,17 +47,8 @@ button:hover{transform:scale(1.05)}
 </div>
 
 <div class="stage">
-    <!-- TIMER / LOCK SCREEN -->
-    <div class="card active" id="timer-screen">
-        <h1>come back 30 seconds before clock hits 12.00 </h1>
-        <p>lets wait...</p>
-        <div class="countdown-timer" id="timerDisplay">00h : 00m : 00s</div>
-        <button id="openBtn" onclick="unlockWebsite()" style="display:none;background:#ff4d6d;font-weight:bold;">🎉 Tap to Open Surprise ✨</button>
-        <p style="font-size:13px;color:#888;margin-top:10px;" id="timerSubText">Raat ke 12 baje tak ka intezaar ✨</p>
-    </div>
-
-    <!-- PAGE 1: Envelope & Letter Popup -->
-    <div class="card" id="p1">
+    <!-- PAGE 1: Envelope & Letter Popup (Directly Active now) -->
+    <div class="card active" id="p1">
         <h1>Saloni 🌻</h1>
         <p>mazak mat bnana 🤧...</p>
         <div class="envelope-box" onclick="openEnvelope()">
@@ -94,18 +82,7 @@ button:hover{transform:scale(1.05)}
     </div>
 </div>
 
-
-function unlockWebsite() {
-    let timerScreen = document.getElementById('timer-screen');
-    timerScreen.classList.remove('active');
-    timerScreen.classList.add('slide-out');
-    
-    setTimeout(function() {
-        timerScreen.style.display = 'none';
-        document.getElementById('p1').classList.add('active');
-    }, 500);
-}
-
+<script>
 function toggleMusic() {
     let music = document.getElementById("bgMusic");
     let btn = document.getElementById("musicBtn");
