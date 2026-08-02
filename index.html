@@ -94,41 +94,6 @@ button:hover{transform:scale(1.05)}
     </div>
 </div>
 
-<script>
-const targetTime = new Date();
-targetTime.setDate(targetTime.getDate() + 1);
-targetTime.setHours(0, 0, 0, 0);
-
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetTime - now;
-
-    if (distance <= 0) {
-        document.getElementById('timerDisplay').innerHTML = "00h : 00m : 00s";
-        document.getElementById('openBtn').style.display = "inline-block";
-        document.getElementById('timerSubText').innerHTML = "Waqt ho gaya! Button dabayein ✨";
-        return;
-    }
-
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    let hStr = hours < 10 ? '0' + hours : hours;
-    let mStr = minutes < 10 ? '0' + minutes : minutes;
-    let sStr = seconds < 10 ? '0' + seconds : seconds;
-
-    document.getElementById('timerDisplay').innerHTML = hStr + "h : " + mStr + "m : " + sStr + "s";
-}
-
-if (new Date().getTime() >= targetTime.getTime()) {
-    document.getElementById('timerDisplay').innerHTML = "00h : 00m : 00s";
-    document.getElementById('openBtn').style.display = "inline-block";
-    document.getElementById('timerSubText').innerHTML = "Waqt ho gaya! Button dabayein ✨";
-} else {
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-}
 
 function unlockWebsite() {
     let timerScreen = document.getElementById('timer-screen');
